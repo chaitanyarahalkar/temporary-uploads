@@ -74,7 +74,7 @@ Thread 2
 Thus the second thread has successfully managed to get in between the two non atomic operations. Thus before writing to the physical address, the mmap is discarded. Now since it does not have any address to write to, it writes to the original read-only file. Thus, the kernel is tricked into thinking that the write was to the original read-only file. This is a race condition exhibited due to write attempts at a location that never exists. And this is how the actual exploit works.
 
 
-The following diagram taken from [here](https://www.cs.toronto.edu/~arnold/427/18s/427_18S/indepth/dirty-cow/demo.html) gives an apt visual representation of the exploit. ![dirtycow](https://chaitanyarahalkar.000webhostapp.com/wp-content/uploads/2019/06/dirtycow.png)
+The following diagram gives an apt visual representation of the exploit. ![dirtycow](dirtycow.png)
 
 
 #### How does Dirty COW gets root privileges?
